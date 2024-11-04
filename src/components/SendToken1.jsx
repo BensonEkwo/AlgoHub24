@@ -83,15 +83,15 @@ function SendToken1() {
                 <span className='text-xl font-space font-semibold'>Total</span>  <span>1000.01 ALGO</span>
             </div>
       </div>
-     <div className='w-full px-5 mt-10 mb-20'>
+     <div className='w-full px-5 mt-10 mb-14'>
      <div className='px-3 py-1 border rounded-md border-b-2
-      flex items-center space-x-2' style={{borderColor:'#F4A466'}}>
+      flex items-center space-x-2 justify-center' style={{borderColor:'#F4A466'}}>
         <span style={{color:'#F4A466'}} className='text-2xl'><PiShieldWarning /></span>
         <span><p className='text-xs font-noto opacity-80 text-nowrap'>
             Double-check recepeint details to avoid errors</p></span>
       </div>
      </div>
-     <div className='flex justify-between items-center  gap-3 mt-2 px-4'>
+     <div className='flex justify-between items-center mb-5 gap-3 px-4'>
                <Link to='/sendtoken'>
                <button className='w-[162px] h-[43px] border border-b-2 rounded-md text-black font-space'
                  style={{borderColor:'#006883'}}>
