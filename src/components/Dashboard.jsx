@@ -42,7 +42,7 @@ function Dashboard() {
         <span className='text-xs'>Scan QR code</span> <span><MdQrCodeScanner/></span>
       </div>
       </div>
-      <div className='w-full flex px-6 items-center'>
+      <div className='w-full flex px-6 items-center justify-center'>
         <div className='flex flex-col w-[340px] h-[173px] px-3 pb-8 pt-3 rounded-md relative'
          style={{backgroundImage:'url(/dashboardbg.jpeg)'}}>
           <div className='absolute top-0 right-0 left-0 bottom-0 opacity-60'
@@ -93,7 +93,7 @@ function Dashboard() {
             <img src='/usdt.jpeg' alt='usdt' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-xs font-space font-semibold'>USDT</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-xs font-space font-medium'>USDT</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -106,7 +106,7 @@ function Dashboard() {
             <img src='/usdc.jpeg' alt='usdc' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-sm font-space font-semibold'>USDC</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-medium'>USDC</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -119,7 +119,7 @@ function Dashboard() {
             <img src='/avax.jpeg' alt='avax' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-sm font-space font-semibold'>AVAX</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-medium'>AVAX</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -132,7 +132,7 @@ function Dashboard() {
             <img src='/pdt.jpeg' alt='Polk' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-sm font-space font-semibold'>Polk</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-medium'>Polk</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
