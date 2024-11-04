@@ -15,7 +15,7 @@ function SendToken1() {
     <div className='w-full h-full bg-white'>
         <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
         <div className='inline-flex space-x-4 items-center' >
-        <Link to='/'>
+        <Link to='/dashboard'>
         <span className='text-2xl'><MdOutlineKeyboardBackspace /></span> 
         </Link>
         <span>
@@ -59,8 +59,8 @@ function SendToken1() {
              style={{backgroundColor:'#F5F5F5'}}/>
              <div className='w-[162px] h-[45px] rounded-lg items-center flex relative px-2 pt-4 '
              style={{backgroundColor:'#7CF0FF'}}>
-                <span className='bg-white w-[24px] h-[24px] rounded-full flex items-center justify-center'>
-              <img src='/algologo.png' alt='Algo logo' className='w-[24px] h-[24px]'/>
+                <span className='bg-white w-[26px] h-[26px] rounded-full flex items-center justify-center'>
+              <img src='/algologo.png' alt='Algo logo' className='w-[20px] h-[20px]'/>
             </span>
             <span className=' ml-1 font-mono text-lg text-white font-semibold'> 1435 ALGO</span>
             <span className='text-[10px] bg-white text-black absolute right-1 
@@ -91,7 +91,7 @@ function SendToken1() {
             Double-check recepeint details to avoid errors</p></span>
       </div>
      </div>
-     <div className='flex justify-between items-center  gap-3 mt-6 px-4'>
+     <div className='flex justify-between items-center  gap-3 mt-2 px-4'>
                <Link to='/sendtoken'>
                <button className='w-[162px] h-[43px] border border-b-2 rounded-md text-black font-space'
                  style={{borderColor:'#006883'}}>

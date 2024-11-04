@@ -68,8 +68,8 @@ function Wallet() {
           </div>
       </div>
 
-     <div className='w-full mt-8 p-5'>
-     <div className='flex flex-col items-center mb-8'>
+     <div className='w-full mt-4 p-5'>
+     <div className='flex flex-col items-center mb-4'>
         <h1 className='text-xl font-bold font-space'>
           Create Account
         </h1>
@@ -94,12 +94,12 @@ function Wallet() {
       </div>
         <div className='flex justify-center mt-4'>
         <div className='inline-flex space-x-3 justify-center'>
-          <button className='px-6 py-1 rounded-2xl bg-slate-100 text-black border flex items-center' 
+          <button className='px-8 py-2 rounded-2xl bg-slate-100 text-black border flex items-center' 
           style={{borderColor:'#31D8EE'}}
           onClick={()=>setKeyView(!Keyview)}>
           <span className='mr-2'><BsEyeSlash /></span> <span className='font-noto text-xs'> View</span>
           </button>
-          <button className='px-6 py-1 rounded-2xl bg-slate-100 text-black border flex items-center' 
+          <button className='px-8 py-2 rounded-2xl bg-slate-100 text-black border flex items-center' 
           style={{borderColor:'#31D8EE'}} onClick={()=>Keycopy(privateKey)}>
              <span className='mr-2'><MdContentCopy /></span>   <span className='font-noto text-xs'>{`${isKeycopy?'copied!':'copy'}`}</span>
           </button>
@@ -127,12 +127,12 @@ function Wallet() {
       </div>
         <div className='flex justify-center mt-4'>
         <div className='inline-flex space-x-3 justify-center'>
-          <button className='px-6 py-1 rounded-2xl bg-slate-100 text-black border flex items-center' 
+          <button className='px-8 py-2 rounded-2xl bg-slate-100 text-black border flex items-center' 
           style={{borderColor:'#31D8EE'}}
           onClick={()=>setPhraseView(!phraseview)}>
           <span className='mr-2'><BsEyeSlash /></span> <span className='font-noto text-xs'> View</span>
           </button>
-          <button className='px-6 py-1 rounded-2xl bg-slate-100 text-black border flex items-center' 
+          <button className='px-8 py-2 rounded-2xl bg-slate-100 text-black border flex items-center' 
           style={{borderColor:'#31D8EE'}} onClick={()=>Phrasecopy(phrase)}>
              <span className='mr-2'><MdContentCopy /></span>    <span className='font-noto text-xs'>{`${isPhrasecopy?'copied!':'copy'}`}</span>
           </button>
@@ -143,7 +143,7 @@ function Wallet() {
       <div className='px-3 py-1 border rounded-md border-b-2
       flex items-center space-x-3' style={{borderColor:'#F4A466'}}>
         <span style={{color:'#F4A466'}} className='text-xl'><PiShieldWarning /></span>
-        <span><p className='text-xs font-noto'>To ensure Account recovery, copy and secure your seed phrase in a secure location</p></span>
+        <span><p className='text-xs font-noto text-nowrap'>To ensure Account recovery, copy and store<span className='block'>your seed phrase in a secure location</span> </p></span>
       </div>
       <div>
         <Link to='/dashboard'>

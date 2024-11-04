@@ -54,8 +54,8 @@ function SendToken() {
              style={{backgroundColor:'#F5F5F5'}}/>
              <div className='w-[162px] h-[45px] rounded-lg items-center flex relative px-2 pt-4 '
              style={{backgroundColor:'#7CF0FF'}}>
-                <span className='bg-white w-[24px] h-[24px] rounded-full flex items-center justify-center'>
-              <img src='/algologo.png' alt='Algo logo' className='w-[24px] h-[24px]'/>
+                <span className='bg-white w-[26px] h-[26px] rounded-full flex items-center justify-center'>
+              <img src='/algologo.png' alt='Algo logo' className='w-[20px] h-[20px]'/>
             </span>
             <span className=' ml-1 font-mono text-lg text-white font-semibold'> 1435 ALGO</span>
             <span className='text-[10px] bg-white text-black absolute right-1 top-1 rounded-md'>Balance</span>

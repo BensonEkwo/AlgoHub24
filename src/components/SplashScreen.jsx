@@ -19,9 +19,9 @@ function SplashScreen() {
       </h1>
         </div>
       <div>
-        <p className='text-sm mx-6 opacity-70 font-noto'>
-          New to AlgoHub? start by creating a secure wallet to manage your assets. 
-          Already have a <span className='block mx-8'>wallet? Easily import it here.</span>
+        <p className='text-sm mx-6 opacity-70 font-noto text-nowrap'>
+          New to AlgoHub? start by creating a secure <span className='block text-nowrap'>wallet to manage your assets. 
+          Already have a</span> <span className='block mx-8'>wallet? Easily import it here.</span>
         </p>
       </div>
       <div className='flex flex-col items-center mt-6 space-y-4'>

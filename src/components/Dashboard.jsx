@@ -72,12 +72,12 @@ function Dashboard() {
         <div className='flex items-center justify-evenly'>
      <Link to='/sendtoken'>
      <button className='flex flex-col items-center gap-2'> <span className='rounded-full p-3'
-      style={{backgroundColor:'#CCF9FF'}}><FiSend/></span> <span className='block text-xs font-mono'>Send</span></button>
+      style={{backgroundColor:'#CCF9FF'}}><FiSend/></span> <span className='block text-sm font-mono'>Send</span></button>
      </Link>
       <button className='flex flex-col items-center gap-2'><span className='rounded-full p-3' 
-      style={{backgroundColor:'#CCF9FF'}}><BiCategory/></span> <span className='block text-xs font-mono'>Receive</span></button>
+      style={{backgroundColor:'#CCF9FF'}}><BiCategory/></span> <span className='block text-sm font-mono'>Receive</span></button>
      <button className='flex flex-col items-center gap-2'> <span className='rounded-full p-3'
-     style={{backgroundColor:'#CCF9FF'}}><IoMdSwap/></span> <span className='block text-xs font-mono'>Swap</span></button>
+     style={{backgroundColor:'#CCF9FF'}}><IoMdSwap/></span> <span className='block text-sm font-mono'>Swap</span></button>
         </div>
       </div>
       <div className='flex flex-col w-full px-3 mt-3'>
@@ -90,7 +90,7 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/usdt.jpeg' alt='usdt' className='w-[30px] h-[30px]'/>
+            <img src='/usdt.jpeg' alt='usdt' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
             <span className='block text-xs font-space font-semibold'>USDT</span> <span className='block text-xs '>'$1.99'</span>
@@ -103,10 +103,10 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/usdc.jpeg' alt='usdc' className='w-[32px] h-[30px]'/>
+            <img src='/usdc.jpeg' alt='usdc' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-xs font-space font-semibold'>USDC</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-semibold'>USDC</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -116,23 +116,23 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/avax.jpeg' alt='avax' className='w-[32px] h-[30px]'/>
+            <img src='/avax.jpeg' alt='avax' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-xs font-space font-semibold'>AVAX</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-semibold'>AVAX</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
-            <span className='block text-xs'>0</span> <span className='block text-xs' style={{color:'#01AB73'}}>'+0.01%'</span>
+            <span className='block text-sm'>0</span> <span className='block text-xs' style={{color:'#01AB73'}}>'+0.01%'</span>
           </div>
         </div>
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/pdt.jpeg' alt='Polk' className='w-[32px] h-[30px]'/>
+            <img src='/pdt.jpeg' alt='Polk' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-xs font-space font-semibold'>Polk</span> <span className='block text-xs '>'$1.99'</span>
+            <span className='block text-sm font-space font-semibold'>Polk</span> <span className='block text-xs '>'$1.99'</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -142,16 +142,16 @@ function Dashboard() {
       </div>
       <div className='flex items-center justify-around w-full p-3 my-3'>
       <div className='flex flex-col items-center'>
-       <span className='text-xl' style={{color:'#006883'}}> <IoMdHome/></span> <span className='text-xs' style={{color:'#006883'}}>Home</span>
+       <span className='text-2xl' style={{color:'#006883'}}> <IoMdHome/></span> <span className='text-xs' style={{color:'#006883'}}>Home</span>
       </div>
       <div className='flex flex-col items-center'>
-        <span className='text-xl' style={{color:'#B4B2B6'}}><TbCategory/></span> <span className='text-xs' style={{color:'#B4B2B6'}}> dApps</span>
+        <span className='text-2xl' style={{color:'#B4B2B6'}}><TbCategory/></span> <span className='text-xs' style={{color:'#B4B2B6'}}> dApps</span>
       </div>
       <div className='flex flex-col items-center'>
-       <span className='text-xl' style={{color:'#B4B2B6'}}> <MdOutlineCastForEducation/></span> <span className='text-xs' style={{color:'#B4B2B6'}}>Education</span>
+       <span className='text-2xl' style={{color:'#B4B2B6'}}> <MdOutlineCastForEducation/></span> <span className='text-xs' style={{color:'#B4B2B6'}}>Education</span>
       </div>
       <div className='flex flex-col items-center'>
-        <span className='text-xl' style={{color:'#B4B2B6'}}><IoMdWallet/></span> <span className='text-xs' style={{color:'#B4B2B6'}}>Wallet</span>
+        <span className='text-2xl' style={{color:'#B4B2B6'}}><IoMdWallet/></span> <span className='text-xs' style={{color:'#B4B2B6'}}>Wallet</span>
       </div>
       </div>
     </div>

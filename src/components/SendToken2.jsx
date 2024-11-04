@@ -22,7 +22,7 @@ const formattedDate = date.toLocaleString('en-US', options).replace(',', ', at')
     <div className='w-full h-full bg-white '>
           <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
         <div className='inline-flex space-x-4 items-center' >
-        <Link to='/'>
+        <Link to='/dashboard'>
         <span className='text-2xl'><MdOutlineKeyboardBackspace /></span> 
         </Link>
         <span>
