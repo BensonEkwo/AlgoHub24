@@ -5,24 +5,24 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { BsEyeSlash } from "react-icons/bs";
 import { MdContentCopy } from "react-icons/md";
 import { PiShieldWarning } from "react-icons/pi";
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { myContext } from '../main';
 function Wallet() {
+  const [phrase,setPhrase]= useState(null)
+  const [privateKey,setPrivateKey]= useState(null)
+  const {value}=useContext(myContext)
+  const [wallet]= value
   const [Keyview,setKeyView]= useState(false)
   const [phraseview,setPhraseView] = useState(false)
-  const privateKey=` your private key has been created for this user, please donot disclose to anyone
-  keep this key safe, this is your private key`
-  const phrase = ` your private key has been created for this user, please donot disclose to anyone
-  keep this key safe, this is your private key`
+
   const [isKeycopy,setisKeycopy]= useState(false)
   const Keycopy = (value) => {
     navigator.clipboard.writeText(value)
       .then(() => {
         setisKeycopy(true); 
       })
-      .then(() => {
-      console.log(isKeycopy)
-      });
+      
   };
   useEffect(() => {
     if (isKeycopy===true) {
@@ -39,19 +39,23 @@ function Wallet() {
       .then(() => {
         setisPhrasecopy(true); 
       })
-      .then(() => {
-      console.log(isPhrasecopy)
-      });
+     
   };
   useEffect(() => {
     if (isPhrasecopy===true) {
       const timer = setTimeout(() => {
         setisPhrasecopy(false);
+        
       }, 4000);
 
       return () => clearTimeout(timer);
     }
   }, [isPhrasecopy]);
+  useEffect(()=>{
+      setPhrase(wallet?.mnemonic);
+      setPrivateKey(wallet?.privateKey)
+      console.log(wallet.address)
+  },[])
   return (
     <div className='w-full h-full bg-white'>
       <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
@@ -81,8 +85,8 @@ function Wallet() {
         <p className='opacity-80 text-sm font-noto'>
           We have created a Unique private key
         </p>
-        <div className='p-3 border border-black rounded-sm relative '>
-          <p>
+        <div className='p-3 border border-black rounded-sm relative break-words'>
+          <p className='text-sm break-words'>
             {privateKey}
           </p>
           <div className={`absolute inset-0 right-0 bottom-0
@@ -123,7 +127,6 @@ function Wallet() {
 
           </div>
         </div>
-        
       </div>
         <div className='flex justify-center mt-4'>
         <div className='inline-flex space-x-3 justify-center'>

@@ -13,10 +13,28 @@ import { IoMdHome } from "react-icons/io";
 import { TbCategory } from "react-icons/tb";
 import { MdOutlineCastForEducation } from "react-icons/md";
 import { IoMdWallet } from "react-icons/io";
+import { useState,useEffect } from 'react';
 
 function Dashboard() {
   const Algo_Balance = 1435;
   const Usd_Balance = '$173.890'
+  const Wallet_address = '0x2xvv.....d34dhdcv'
+
+  const [iscopy,setiscopy]= useState(false)
+  const copy = (value) => {
+    navigator.clipboard.writeText(value)
+      .then(() => {
+        setiscopy(true); 
+      })
+  };
+  useEffect(() => {
+    if (iscopy===true) {
+      const timer = setTimeout(() => {
+        setiscopy(false)
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [iscopy]);
   return (
     <div className='w-full h-full bg-white'>
           <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
@@ -51,7 +69,8 @@ function Dashboard() {
          <div className='flex items-center justify-between mb-5 '>
          <div className='z-50'><h1 className='text-white font-space'> <span className='inline-flex gap-2 items-center font-medium '>My Wallet  < IoMdWallet/> </span>
         </h1> 
-         <span className='inline-flex gap-2 items-center text-white font-medium'>0x2xvv.....d34dhdcv<MdContentCopy /></span>
+         <span className='inline-flex gap-2 items-center text-white font-medium'>{Wallet_address} <button onClick={()=>copy(Wallet_address)}><MdContentCopy /></button>
+         </span>{iscopy&& <span className='text-xs text-white'>copied</span>}
          </div>
           <div className='p-1 bg-white rounded-xl inline-flex items-center z-50'><span className='text-xs'>USD</span> <span className='text-xs'><IoIosArrowDown /></span></div>
          </div>
@@ -90,10 +109,10 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/usdt.jpeg' alt='usdt' className='w-[34px] h-[34px]'/>
+            <img src='/alg.jpeg' alt='algo' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-xs font-space font-medium'>USDT</span> <span className='block text-xs '>$1.99</span>
+            <span className='block text-xs font-space font-medium'></span>ALGO <span className='block text-xs '>$1.99</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -103,7 +122,7 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/usdc.jpeg' alt='usdc' className='w-[34px] h-[34px]'/>
+            <img src='/usdc.jpeg' alt='usdc' className='w-[40px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
             <span className='block text-sm font-space font-medium'>USDC</span> <span className='block text-xs '>$1.99</span>
@@ -116,10 +135,10 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/avax.jpeg' alt='avax' className='w-[34px] h-[34px]'/>
+            <img src='/usdt.jpeg' alt='avax' className='w-[36px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-sm font-space font-medium'>AVAX</span> <span className='block text-xs '>$1.99</span>
+            <span className='block text-sm font-space font-medium'>USDT</span> <span className='block text-xs '>$1.99</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>
@@ -129,10 +148,10 @@ function Dashboard() {
         <div className='flex items-center justify-between my-3'>
           <div className='flex items-center space-x-2'>
           <div>
-            <img src='/pdt.jpeg' alt='Polk' className='w-[34px] h-[34px]'/>
+            <img src='/gAlgo.svg' alt='gAlgo' className='w-[34px] h-[34px]'/>
           </div>
           <div className='flex flex-col items-center'>
-            <span className='block text-sm font-space font-medium'>Polk</span> <span className='block text-xs '>$1.99</span>
+            <span className='block text-sm font-space font-medium'>gALGO</span> <span className='block text-xs '>$1.99</span>
           </div>
           </div>
           <div className='flex flex-col items-end'>

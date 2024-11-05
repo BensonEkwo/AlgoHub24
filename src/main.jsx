@@ -1,6 +1,7 @@
 import {  StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createContext,useState } from 'react'; 
 import './index.css'
 import App from './App.jsx'
 import  Wallet from './components/Wallet.jsx';
@@ -9,6 +10,8 @@ import Dashboard from './components/Dashboard.jsx';
 import SendToken from './components/SendToken.jsx';
 import SendToken1 from './components/SendToken1.jsx';
 import SendToken2 from './components/SendToken2.jsx';
+
+export const myContext = createContext();
 
 const router= createBrowserRouter([
   {element:<App/>,
@@ -22,8 +25,16 @@ children:[
 ]}
 ])
 
+const Main=()=>{
+  const [wallet, setWallet] = useState(null);
+  return(
+    <StrictMode>
+      <myContext.Provider value={{value:[wallet,setWallet]}}>
+        <RouterProvider router={router} />
+      </myContext.Provider>
+    </StrictMode>
+  )
+}
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router}/>
-  </StrictMode>
+  <Main/>
 )
