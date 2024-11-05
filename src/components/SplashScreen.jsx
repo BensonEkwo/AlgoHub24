@@ -15,6 +15,7 @@ function SplashScreen() {
   };
   const newacc = createWallet()
   console.log(newacc)
+	localStorage.setItem("user", newacc);
   return (
    
     <div className='w-full h-full flex flex-col items-center justify-end pb-8 px-4 space-y-14 bg-white'>
