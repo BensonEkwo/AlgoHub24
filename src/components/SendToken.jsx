@@ -5,8 +5,21 @@ import { IoIosArrowDown } from "react-icons/io";
 import { SlOptionsVertical } from "react-icons/sl";
 import { LuBell } from "react-icons/lu";
 import { MdQrCodeScanner } from "react-icons/md";
+import { useState } from 'react';
 
 function SendToken() {
+	let [address, setAddress] = useState('');
+	let handleAddressChange = (event) => {
+		setAddress(event.target.value);
+		localStorage.setItem("receiver",event.target.value);
+		console.log(localStorage.getItem("receiver"));
+	}
+	let [payAmount, setAmount] = useState('');
+	let handleAmountChange = (event) => {
+		setAmount(event.target.value);
+		localStorage.setItem("amount", event.target.value);
+		console.log(localStorage.getItem("amount"));
+	}
   return (
     <div className='w-full h-full bg-white'>
          <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
@@ -38,7 +51,7 @@ function SendToken() {
       <div className='w-full px-5 flex flex-col gap-3'>
         <div className='flex items-center justify-between'>
             <form className='relative flex items-center'>
-            <input type='text' placeholder='Paste-Address' className='w-[252px] border text-sm
+            <input value={address} onChange={handleAddressChange} type='text' placeholder='Paste-Address' className='w-[252px] border text-sm
             border-dotted border-gray-400 rounded-lg focus:outline-none px-4 py-2'
              style={{backgroundColor:'#F5F5F5'}}/>
              <button className='absolute right-2 bg-white text-sky-300 rounded-lg text-xs p-1'
@@ -49,7 +62,7 @@ function SendToken() {
              </button>
         </div>
         <div className='flex items-center justify-between'>
-        <input type='number' placeholder='Ammount' className='w-[162px] border text-sm
+        <input value={payAmount} onChange={handleAmountChange} type='number' placeholder='Amount' className='w-[162px] border text-sm
             border-dotted border-gray-400 rounded-lg focus:outline-none px-4 py-2'
              style={{backgroundColor:'#F5F5F5'}}/>
              <div className='w-[162px] h-[45px] rounded-lg items-center flex relative px-2 pt-4 '

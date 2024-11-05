@@ -7,10 +7,12 @@ import { LuBell } from "react-icons/lu";
 import { MdQrCodeScanner } from "react-icons/md";
 import { MdClear } from "react-icons/md";
 import { PiShieldWarning } from "react-icons/pi";
+import { makeTransaction } from '../services/algorandServices';
 
 function SendToken1() {
-    const algo_ammount= 1000
-    const address= 'dnfk3u494iti49r8i4jr9'
+    const algo_ammount= localStorage.getItem("amount");
+	const transactionFee = 0.001;
+    const address= localStorage.getItem("receiver");
   return (
     <div className='w-full h-full bg-white'>
         <div className=' top-0 flex flex-row items-start space-x-32 pt-6 px-5 justify-between mb-10'>
@@ -73,14 +75,14 @@ function SendToken1() {
             <h1 className='text-xl font-semibold font-space'>Summary</h1>
             </div>
             <div className='flex justify-between items-center space-x-12 my-3'>
-                <span className='text-xl font-space'>Transaction Fee</span>  <span>0.001 ALGO</span>
+                <span className='text-xl font-space'>Transaction Fee</span>  <span>{transactionFee} ALGO</span>
             </div>
             <div className='flex justify-between items-center space-x-32 my-3' >
-                <h1 className='text-xl font-space'>Amount</h1>  <h1>1000 ALGO</h1>
+                <h1 className='text-xl font-space'>Amount</h1>  <h1>{algo_ammount} ALGO</h1>
             </div>
             <div className='flex justify-between items-center space-x-36 my-3 border-t-2 
             border-b-2 border-gray-200 py-2'>
-                <span className='text-xl font-space font-semibold'>Total</span>  <span>1000.01 ALGO</span>
+                <span className='text-xl font-space font-semibold'>Total</span>  <span>{algo_ammount + transactionFee} ALGO</span>
             </div>
       </div>
      <div className='w-full px-5 mt-10 mb-14'>
@@ -99,7 +101,7 @@ function SendToken1() {
                 </button>
                </Link>
                <Link to='/sendtoken2'>
-               <button className='w-[162px] h-[43px] border border-b-2 rounded-md text-white font-space'
+               <button onClick={() => makeTransaction(localStorage.getItem("user"), )} className='w-[162px] h-[43px] border border-b-2 rounded-md text-white font-space'
                 style={{backgroundColor:'#006883'}} >
                     Confirm
                 </button>
