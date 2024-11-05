@@ -52,9 +52,9 @@ function Wallet() {
     }
   }, [isPhrasecopy]);
   useEffect(()=>{
-      setPhrase(wallet?.mnemonic);
-      setPrivateKey(wallet?.privateKey)
-      console.log(wallet.address)
+      setPhrase(localStorage.getItem("user_mnemonic"));
+      setPrivateKey(localStorage.getItem("user_privateKey"))
+      console.log(localStorage.getItem("user_address"))
   },[])
   return (
     <div className='w-full h-full bg-white'>
@@ -87,7 +87,7 @@ function Wallet() {
         </p>
         <div className='p-3 border border-black rounded-sm relative break-words'>
           <p className='text-sm break-words'>
-            {privateKey}
+            {localStorage.getItem("user_privateKey")}
           </p>
           <div className={`absolute inset-0 right-0 bottom-0
            bg-white bg-opacity-25 backdrop-blur-sm ${Keyview? 'hidden':'block'}`}>
@@ -120,7 +120,7 @@ function Wallet() {
         </p>
         <div className='p-3 border border-black rounded-sm relative '>
           <p>
-           {phrase}
+           {localStorage.getItem("user_mnemonic")}
           </p>
           <div className={`absolute inset-0 right-0 bottom-0
            bg-white bg-opacity-25 backdrop-blur-sm ${phraseview? 'hidden':'block'}`}>
