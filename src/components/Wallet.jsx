@@ -11,10 +11,11 @@ import { myContext } from '../main';
 function Wallet() {
   const [phrase,setPhrase]= useState(null)
   const [privateKey,setPrivateKey]= useState(null)
-  const {value}=useContext(myContext)
+  const {value}=useContext(myContext)   
   const [wallet]= value
   const [Keyview,setKeyView]= useState(false)
   const [phraseview,setPhraseView] = useState(false)
+  
 
   const [isKeycopy,setisKeycopy]= useState(false)
   const Keycopy = (value) => {
@@ -80,14 +81,14 @@ function Wallet() {
       </div>
       <div className='flex flex-col space-y-4'>
         <h1 className='font-bold text-lg font-space'>
-          Address
+          Private Key
         </h1>
         <p className='opacity-80 text-sm font-noto'>
           We have created a Unique private key
         </p>
         <div className='p-3 border border-black rounded-sm relative break-words'>
           <p className='text-sm break-words'>
-            {localStorage.getItem("user_privateKey")}
+            {wallet.privateKey}
           </p>
           <div className={`absolute inset-0 right-0 bottom-0
            bg-white bg-opacity-25 backdrop-blur-sm ${Keyview? 'hidden':'block'}`}>

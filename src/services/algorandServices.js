@@ -3,9 +3,9 @@ import algosdk from 'algosdk';
 const algodClient = new algosdk.Algodv2("", "https://testnet-api.algonode.cloud", "")
 
 // Function to create a new Algorand wallet
-export async function createWallet() {
+export  function createWallet() {
 	// Generate a new account
-	console.log(await algodClient.ready().do())
+	
 	const account = algosdk.generateAccount();
 
 	// Get the address and private key

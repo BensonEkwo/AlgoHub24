@@ -16,11 +16,17 @@ import { IoMdWallet } from "react-icons/io";
 import { useState,useEffect } from 'react';
 
 function Dashboard() {
-  const Algo_Balance = localStorage.getItem("userAccountBalance");
-  const Usd_Balance = localStorage.getItem("userAccountBalance");
-  const Wallet_address = localStorage.getItem("user_address");
+  const Algo_Balance = '1435';
+  const Usd_Balance = '$173.890';
+  const Wallet__address = localStorage.getItem("user_address");
 
 	console.log("algo balance: ", localStorage.getItem("userAccountBalance"));
+  function shortenText(text, startChars = 6, endChars = 6) {
+    if (text.length <= startChars + endChars) return text;
+    
+    return `${text.slice(0, startChars)}...${text.slice(-endChars)}`;
+  }
+  const Wallet_address =shortenText(Wallet__address);
 
   const [iscopy,setiscopy]= useState(false)
   const copy = (value) => {
@@ -71,7 +77,7 @@ function Dashboard() {
          <div className='flex items-center justify-between mb-5 '>
          <div className='z-50'><h1 className='text-white font-space'> <span className='inline-flex gap-2 items-center font-medium '>My Wallet  < IoMdWallet/> </span>
         </h1> 
-         <span className='inline-flex gap-2 items-center text-white font-medium'>{Wallet_address} <button onClick={()=>copy(Wallet_address)}><MdContentCopy /></button>
+         <span className='inline-flex gap-2 items-center text-white font-medium'>{Wallet_address} <button onClick={()=>copy(Wallet__address)}><MdContentCopy /></button>
          </span>{iscopy&& <span className='text-xs text-white'>copied</span>}
          </div>
           <div className='p-1 bg-white rounded-xl inline-flex items-center z-50'><span className='text-xs'>USD</span> <span className='text-xs'><IoIosArrowDown /></span></div>

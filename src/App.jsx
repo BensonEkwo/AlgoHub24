@@ -4,18 +4,25 @@ import { useEffect } from "react"
 
 function App() {
   useEffect(() => {
-    
-    Telegram.WebApp.ready();
-    
-    document.body.style.backgroundColor = "#ffffff";
-
-    Telegram.WebApp.onEvent('themeChanged', () => {
+    // Check if Telegram is defined
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      
+      // Set initial background color
       document.body.style.backgroundColor = "#ffffff";
-    });
 
-    return () => {
-      Telegram.WebApp.offEvent('themeChanged');
-    };
+      // Listen for theme changes
+      Telegram.WebApp.onEvent('themeChanged', () => {
+        document.body.style.backgroundColor = "#ffffff";
+      });
+
+      // Cleanup the event listener when component unmounts
+      return () => {
+        Telegram.WebApp.offEvent('themeChanged');
+      };
+    } else {
+      console.warn("Telegram WebApp is not available in this environment.");
+    }
   }, []);
   return (
     <>
