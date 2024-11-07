@@ -16,9 +16,11 @@ import { IoMdWallet } from "react-icons/io";
 import { useState,useEffect } from 'react';
 
 function Dashboard() {
-  const Algo_Balance = 1435;
-  const Usd_Balance = '$173.890'
-  const Wallet_address = '0x2xvv.....d34dhdcv'
+  const Algo_Balance = localStorage.getItem("userAccountBalance");
+  const Usd_Balance = localStorage.getItem("userAccountBalance");
+  const Wallet_address = localStorage.getItem("user_address");
+
+	console.log("algo balance: ", localStorage.getItem("userAccountBalance"));
 
   const [iscopy,setiscopy]= useState(false)
   const copy = (value) => {
